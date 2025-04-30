@@ -1,0 +1,21 @@
+==> 2025-04-28 20:39:41 <==
+# cmd: C:\Users\s.maxammadjonov\AppData\Local\anaconda3\Scripts\conda-script.py create -n stream python=3.13
+# conda version: 24.9.2
++conda-forge/noarch::ca-certificates-2025.4.26-h4c7d964_0
++conda-forge/noarch::pip-25.1-pyh145f28c_0
++conda-forge/noarch::python_abi-3.13-7_cp313
++conda-forge/noarch::tzdata-2025b-h78e105d_0
++conda-forge/win-64::bzip2-1.0.8-h2466b09_7
++conda-forge/win-64::libexpat-2.7.0-he0c23c2_0
++conda-forge/win-64::libffi-3.4.6-h537db12_1
++conda-forge/win-64::liblzma-5.8.1-h2466b09_0
++conda-forge/win-64::libmpdec-4.0.0-h2466b09_0
++conda-forge/win-64::libsqlite-3.49.1-h67fdade_2
++conda-forge/win-64::libzlib-1.3.1-h2466b09_2
++conda-forge/win-64::openssl-3.5.0-ha4e3fda_0
++conda-forge/win-64::python-3.13.3-h261c0b1_101_cp313
++conda-forge/win-64::tk-8.6.13-h5226925_1
++conda-forge/win-64::ucrt-10.0.22621.0-h57928b3_1
++conda-forge/win-64::vc-14.3-h2b53caa_26
++conda-forge/win-64::vc14_runtime-14.42.34438-hfd919c2_26
+# update specs: ['python=3.13']
