@@ -56,13 +56,13 @@ def analyze_parallel(data_groups):
         return pool.map(lambda x: find_anomalies(compute_stats(x[1])), data_groups)
 
 # Асинхронная функция для получения текущей температуры через OpenWeatherMap API
-"""
+async def fetch_current_temp_async(city, api_key):
+    """
     ИСПОЛЬЗОВАНИЕ ASYNCIO:
     В отличие от библиотеки requests, aiohttp не блокирует основной поток программы 
     во время ожидания ответа от сервера. В масштабируемых приложениях это позволяет 
     делать сотни запросов одновременно, не "вешая" интерфейс.
     """
-async def fetch_current_temp_async(city, api_key):
     url = f"https://api.openweathermap.org/data/2.5/weather?q={city}&units=metric&appid={api_key}"
     async with aiohttp.ClientSession() as session:
         async with session.get(url) as resp:
