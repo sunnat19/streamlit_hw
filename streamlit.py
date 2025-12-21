@@ -45,11 +45,23 @@ def find_anomalies(df):
 
 # Использование multiprocessing для ускорения обработки нескольких групп данных
 def analyze_parallel(data_groups):
+    """
+    ИСПОЛЬЗОВАНИЕ MULTIPROCESSING:
+    Почему это здесь? Если в файле 100 городов и миллионы строк, последовательная 
+    обработка займет много времени. Pool(cpu_count()) распределяет задачи по ядрам процессора.
+    Каждый процесс обрабатывает свою группу (город) независимо.
+    """
     with Pool(cpu_count()) as pool:
         # Каждая группа анализируется в отдельном процессе
         return pool.map(lambda x: find_anomalies(compute_stats(x[1])), data_groups)
 
 # Асинхронная функция для получения текущей температуры через OpenWeatherMap API
+"""
+    ИСПОЛЬЗОВАНИЕ ASYNCIO:
+    В отличие от библиотеки requests, aiohttp не блокирует основной поток программы 
+    во время ожидания ответа от сервера. В масштабируемых приложениях это позволяет 
+    делать сотни запросов одновременно, не "вешая" интерфейс.
+    """
 async def fetch_current_temp_async(city, api_key):
     url = f"https://api.openweathermap.org/data/2.5/weather?q={city}&units=metric&appid={api_key}"
     async with aiohttp.ClientSession() as session:
